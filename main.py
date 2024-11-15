@@ -11,7 +11,7 @@ def form_url_input():
                 yt = YouTube(
                     url=url,
                 )
-                print(st.context.headers.to_dict())
+                st.write(st.context.headers.to_dict())
                 video = yt.streams.filter(progressive=True, file_extension="mp4").first()
 
                 st.video(video.url)
